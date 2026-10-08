@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.demo1.mapper.AdminMapper">
+
+    <select id="getAdmin" resultType="org.example.demo1.entity.Admin">
+        select * from admin
+        <where>
+            <if test="name != null">and name like concat('%', #{name}, '%')</if>
+        </where>
+        order by id desc
+    </select>
+
+    <select id="getAdminByUsername" resultType="org.example.demo1.entity.Admin">
+        select * from admin
+        <where>
+            and username = #{username}
+        </where>
+    </select>
+
+    <insert id="addAdmin" parameterType="org.example.demo1.entity.Admin">
+        insert into admin (username, password, name)
+        values (#{username}, #{password}, #{name})
+    </insert>
+
+
+</mapper>
