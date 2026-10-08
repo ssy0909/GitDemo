@@ -3,6 +3,8 @@ server:
 
 # 数据库配置
 spring:
+  application:
+    name: Demo1
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
