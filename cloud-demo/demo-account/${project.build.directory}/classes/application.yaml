@@ -1,0 +1,15 @@
+server:
+  port: 8180
+spring:
+  application:
+    name: demo-account
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    com.netflix.discovery: DEBUG
+    com.netflix.eureka: DEBUG
